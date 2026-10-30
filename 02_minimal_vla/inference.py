@@ -27,6 +27,13 @@ from model import MinimalVLA
 from train import SyntheticRobotDataset
 
 
+# 默认的 DejaVu Sans 不含中文字形；优先使用系统中的中文字体。
+plt.rcParams['font.sans-serif'] = [
+    'Noto Sans CJK SC', 'Noto Sans CJK JP', 'Microsoft YaHei',
+    'SimHei', 'PingFang SC', 'Heiti SC', 'Arial Unicode MS', 'DejaVu Sans',
+]
+
+
 def load_model(checkpoint_path=None):
     model = MinimalVLA(
         img_size=64, patch_size=8, embed_dim=128,

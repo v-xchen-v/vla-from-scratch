@@ -55,8 +55,9 @@ vla-from-scratch/
 ## 快速开始
 
 ```bash
-# 1. 安装依赖
-pip install -r requirements.txt
+# 1. 创建并激活 Conda 环境（Python 3.11 / PyTorch 2.6 / CUDA 12.4）
+conda env create -f environment.yml
+conda activate 01-ody-trek
 
 # 2. 第一课：动作离散化（约1分钟）
 python 01_basics/01_action_tokenization.py
@@ -79,6 +80,15 @@ python 03_rt2_style/rt2_demo.py
 # 8. 主流VLA架构对比
 python 04_advanced/compare_vlas.py
 ```
+
+请在本项目目录下运行以上命令。`environment.yml` 适用于 Linux x86_64，
+已选择兼容本机 NVIDIA 555 驱动的 CUDA 12.4 版本；无需单独安装 CUDA Toolkit。
+无图形界面的终端可先运行 `export MPLBACKEND=Agg`，图表仍会保存到 `assets/`。
+其他平台可在 Python 环境中使用 `python -m pip install -r requirements.txt`。
+
+所有绘图脚本均优先使用系统中文字体（Noto Sans CJK、微软雅黑、黑体等），
+在课程子目录中直接运行也会生效。如果仍有缺字警告，请先安装中文字体；
+Ubuntu/Debian 可安装 `fonts-noto-cjk`，然后重新运行脚本。
 
 ---
 

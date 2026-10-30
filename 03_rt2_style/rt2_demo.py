@@ -17,7 +17,9 @@ RT-2（Robotics Transformer 2）的核心创新：
 
 import sys
 import os
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "02_minimal_vla"
+))
 
 import torch
 import torch.nn as nn
@@ -26,6 +28,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from einops import rearrange
+
+
+# 默认的 DejaVu Sans 不含中文字形；优先使用系统中的中文字体。
+plt.rcParams['font.sans-serif'] = [
+    'Noto Sans CJK SC', 'Noto Sans CJK JP', 'Microsoft YaHei',
+    'SimHei', 'PingFang SC', 'Heiti SC', 'Arial Unicode MS', 'DejaVu Sans',
+]
 
 
 # ─────────────────────────────────────────────

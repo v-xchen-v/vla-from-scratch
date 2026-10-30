@@ -27,6 +27,13 @@ from tqdm import tqdm
 from model import MinimalVLA, print_model_summary
 
 
+# 默认的 DejaVu Sans 不含中文字形；优先使用系统中的中文字体。
+plt.rcParams['font.sans-serif'] = [
+    'Noto Sans CJK SC', 'Noto Sans CJK JP', 'Microsoft YaHei',
+    'SimHei', 'PingFang SC', 'Heiti SC', 'Arial Unicode MS', 'DejaVu Sans',
+]
+
+
 # ─────────────────────────────────────────────
 # 合成机器人数据集
 # ─────────────────────────────────────────────

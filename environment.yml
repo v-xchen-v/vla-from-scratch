@@ -1,0 +1,13 @@
+name: 01-ody-trek
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      # CUDA 12.4 wheels are compatible with the local NVIDIA 555 driver.
+      - --extra-index-url https://download.pytorch.org/whl/cu124
+      - torch==2.6.0+cu124
+      - torchvision==0.21.0+cu124
+      - transformers>=4.35.0,<5
+      - -r requirements.txt
